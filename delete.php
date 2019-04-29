@@ -13,10 +13,10 @@
             
             $i_ID = $_POST['i_ID'];
 			
-			echo " <br> Instructor table before insertion <br>";
+			echo " <br> Customer table before deletion <br>";
 			show_instructor($conn);
    
-            $sql = "DELETE FROM instructor WHERE ID = $i_ID";
+            $sql = "DELETE FROM customer WHERE accountID = $i_ID";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
@@ -25,22 +25,22 @@
                die('Could not enter data: ' . mysqli_error($conn));
             }
          
-            echo "Entered data successfully\n";
+            echo "Removed data successfully\n";
 			
-			echo " <br> Instructor table after insertion <br>";
-			show_instructor($conn);
+			echo " <br> Customer table after deletion <br>";
+			show_Customer($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_instructor($conn);
+			 show_Customer($conn);
 		 }	 
 		 
 		 else {
       ?>
 	  <br><br><br><br>
-     <p>Enter Instructor ID for deletion <br> </p>
+     <p>Enter Customer ID for deletion <br> </p>
       <form method = "post" action = "<?php $_PHP_SELF ?>">
          <table width = "150" border = "0" cellspacing = "1" cellpadding = "2">
             <tr>
