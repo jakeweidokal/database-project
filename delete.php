@@ -14,7 +14,7 @@
             $i_ID = $_POST['i_ID'];
 			
 			echo " <br> Customer table before deletion <br>";
-			show_instructor($conn);
+			show_customer($conn);
    
             $sql = "DELETE FROM customer WHERE accountID = $i_ID";
             
@@ -28,13 +28,13 @@
             echo "Removed data successfully\n";
 			
 			echo " <br> Customer table after deletion <br>";
-			show_Customer($conn);
+			show_customer($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_Customer($conn);
+			 show_customer($conn);
 		 }	 
 		 
 		 else {

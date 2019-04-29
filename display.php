@@ -8,7 +8,7 @@
 <?php
     require("dbconnect.php");
     require("tableshow.php");
-    show_Customer($conn);
+    show_customer($conn);
 ?>
 
 
