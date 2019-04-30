@@ -19,14 +19,14 @@
             $i_name = $_POST['i_name'];
             $i_email = $_POST['i_email'];
             $i_address = $_POST['i_address'];
-            $i_phoneNumber = $_POST['i_phoneNumber']
+            $i_phoneNumber = $_POST['i_phoneNumber'];
 			
 			echo " <br> Customer table before insertion <br>";
 			show_customer($conn);
    
             $sql = "INSERT INTO customer ".
                "(accountID, name, email, address, phoneNumber) "."VALUES ".
-               "('$i_sccountID','$i_name','$i_email', '$i_address', '$i_phoneNumber)";
+               "('$i_accountID','$i_name','$i_email', '$i_address', '$i_phoneNumber')";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
