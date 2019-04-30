@@ -6,8 +6,8 @@
 
 <?php
 	  
-		require("tableshow.php");
-		require("dbconnect.php");
+		require("proj_tableshow.php");
+		require("proj_dbconnect.php");
 	  
          if(isset($_POST['delete'])) {
             

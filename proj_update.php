@@ -4,26 +4,19 @@
 <div style="height:900px; background-color: lightblue;" align="center">
 <br><br><br><br>
 
-
-<p style="color:blue;font-weight:bold;"> write your code here that takes an instructor's ID as input and updates <br>
-his/her salary by 10%. Please make sure you display <br>
-instructor table before and after the update </p>
-
 <?php
 	  
-    require("tableshow.php");
-    require("dbconnect.php");
+    require("proj_tableshow.php");
+    require("proj_dbconnect.php");
     
         if(isset($_POST['update'])) {
         
             $i_ID = $_POST['i_ID'];
             
-            echo " <br> Instructor table before insertion <br>";
-            show_instructor($conn);
+            echo " <br> Inventory before update <br>";
+            show_inventory($conn);
 
-            $sql = "UPDATE instructor ".
-                   "SET salary = salary * 1.1 ". 
-                   "WHERE ID = $i_ID";
+            $sql = "UPDATE inventory SET quantityInStock = $i_newQuantity WHERE itemNumber = $i_ID";
             
             //mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
@@ -34,26 +27,31 @@ instructor table before and after the update </p>
             
             echo "Entered data successfully\n";
             
-            echo " <br> Instructor table after insertion <br>";
-            show_instructor($conn);
+            echo " <br> Inventory after update <br>";
+            show_inventory($conn);
             
             mysqli_close($conn);
         } 
         else if(isset($_POST['show'])){
             
-            show_instructor($conn);
+            show_inventory($conn);
         }	 
         
         else {
     ?>
     <br><br><br><br>
-    <p>Enter Instructor ID to give them a 10% raise  <br> </p>
+    <p>enter item ID and updated quantity for inventory  <br> </p>
     <form method = "post" action = "<?php $_PHP_SELF ?>">
         <table width = "150" border = "0" cellspacing = "1" cellpadding = "2">
         <tr>
             <td width = "20">ID</td>
             <td>
                 <input name = "i_ID" type = "text" id = "i_ID">
+            </td>
+
+            <td width = "20">Stock</td>
+            <td>
+                <input name = "i_newQuantity" type = "text" id = "i_newQuantity">
             </td>
         </tr>
         

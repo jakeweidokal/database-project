@@ -6,8 +6,8 @@
 
 
 <?php
-    require("dbconnect.php");
-    require("tableshow.php");
+    require("proj_dbconnect.php");
+    require("proj_tableshow.php");
     show_customer($conn);
 ?>
 
