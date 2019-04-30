@@ -12,11 +12,13 @@
         if(isset($_POST['update'])) {
         
             $i_ID = $_POST['i_ID'];
+            $i_newQuantity = $_POST['i_newQuantity'];
             
             echo " <br> Inventory before update <br>";
             show_inventory($conn);
 
             $sql = "UPDATE inventory SET quantityInStock = $i_newQuantity WHERE itemNumber = $i_ID";
+            echo "$sql";
             
             //mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);

@@ -42,7 +42,9 @@
 			
             mysqli_close($conn);
          } 
-		 else if(isset($_POST['show'])){
+
+
+		  else if(isset($_POST['show'])){
 			 
 			 show_customer($conn);
 		 }	 
