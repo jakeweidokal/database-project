@@ -15,11 +15,11 @@ insert into employee VALUES('kristen', 1003, 'kristen@store.com', '945 water str
 insert into employee VALUES('maggie', 1004, 'maggie@store.com', '9923 highway circle Kent, OH 44240', 75000);
 
 
-insert into customer VALUES(9001, 'jordan', 'jordan@kent.edu', '3091 jordan lane Ravenna, OH 44266', 3309887654);
-insert into customer VALUES(9002, 'lucy', 'lucy@kent.edu', '3463 lucy road Ravenna, OH 44266', 3304358856);
-insert into customer VALUES(9003, 'allan', 'allan@kent.edu', '1193 allan lane Kent, OH 44240', 4407585336);
-insert into customer VALUES(9004, 'mike', 'mike@kent.edu', '4659 ,mike avenue Hudson, OH 44236', 2165447258);
-insert into customer VALUES(9005, 'deanna', 'deanna@kent.edu', '6465 deanna circle Ravenna, OH 44266', 3305714698);
+insert into customer VALUES(9001, 'jordan', 'jordan@kent.edu', '3091 jordan lane Ravenna, OH 44266', '3309887654');
+insert into customer VALUES(9002, 'lucy', 'lucy@kent.edu', '3463 lucy road Ravenna, OH 44266', '3304358856');
+insert into customer VALUES(9003, 'allan', 'allan@kent.edu', '1193 allan lane Kent, OH 44240', '4407585336');
+insert into customer VALUES(9004, 'mike', 'mike@kent.edu', '4659 ,mike avenue Hudson, OH 44236', '2165447258');
+insert into customer VALUES(9005, 'deanna', 'deanna@kent.edu', '6465 deanna circle Ravenna, OH 44266', '3305714698');
 
 
 insert into transactions VALUES(5001, 1555848228, 9001, 56.96, 'visa', 1003 );

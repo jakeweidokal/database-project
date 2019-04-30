@@ -88,7 +88,7 @@
 
             <tr>
                <td width = "250"> Phone Number</td>
-               <td> <input name="i_PhoneNumber" type= "text" id = "i_phoneNumber"> </td>
+               <td> <input name="i_phoneNumber" type= "text" id = "i_phoneNumber"> </td>
             </tr>
             <tr>
                <td width = "250"></td>

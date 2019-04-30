@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `name` varchar(60) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `address` varchar(60) DEFAULT NULL,
-  `phoneNumber` int(11) DEFAULT NULL
+  `phoneNumber` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `employee` (
