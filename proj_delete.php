@@ -76,7 +76,7 @@
 <br><br><br><br>
 
 <hr width="50">
-<a href="Frontpage.html" style="color:red;font-weight:bold;">Home</a>
+<a href="index.html" style="color:red;font-weight:bold;">Home</a>
 <hr width="50">
 </div>
 </body> </html>
