@@ -2,7 +2,7 @@
 <html>
 
    <head>
-      <title>Add New Record in MySQL Database</title>
+      <title>Add New Customer</title>
    </head>
 
    <body>
@@ -14,22 +14,19 @@
 	  
          if(isset($_POST['add'])) {
             
-            if(! get_magic_quotes_gpc() ) {
-               $i_name = addslashes ($_POST['i_name']);
-               $i_dept = addslashes ($_POST['i_dept']);
-            } else {
-               $i_name = $_POST['i_name'];
-               $i_dept = $_POST['i_dept'];
-            }
-            $i_ID = $_POST['i_ID'];
-            $i_salary = $_POST['i_salary'];
+
+            $i_accountID = $_POST['i_accountID'];
+            $i_name = $_POST['i_name'];
+            $i_email = $_POST['i_email'];
+            $i_address = $_POST['i_address'];
+            $i_phoneNumber = $_POST['i_phoneNumber']
 			
-			echo " <br> Instructor table before insertion <br>";
-			show_instructor($conn);
+			echo " <br> Customer table before insertion <br>";
+			show_customer($conn);
    
-            $sql = "INSERT INTO instructor ".
-               "(ID,name, dept_name, salary) "."VALUES ".
-               "('$i_ID','$i_name','$i_dept', '$i_salary')";
+            $sql = "INSERT INTO customer ".
+               "(accountID, name, email, address, phoneNumber) "."VALUES ".
+               "('$i_sccountID','$i_name','$i_email', '$i_address', '$i_phoneNumber)";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
@@ -40,26 +37,26 @@
          
             echo "Entered data successfully\n";
 			
-			echo " <br> Instructor table after insertion <br>";
-			show_instructor($conn);
+			echo " <br> Customer table after insertion <br>";
+			show_customer($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_instructor($conn);
+			 show_customer($conn);
 		 }	 
 		 
 		 else {
       ?>
 	  <br><br><br><br>
-     <p>Enter Instructor information for insertion <br> </p>
+     <p>Enter Customer information for insertion <br> </p>
       <form method = "post" action = "<?php $_PHP_SELF ?>">
          <table width = "600" border = "0" cellspacing = "1" cellpadding = "2">
             <tr>
                <td width = "250">ID</td>
                <td>
-                  <input name = "i_ID" type = "text" id = "i_ID">
+                  <input name = "i_accountID" type = "text" id = "i_accountID">
                </td>
             </tr>
          
@@ -71,21 +68,32 @@
             </tr>
          
             <tr>
-               <td width = "250">Department</td>
+               <td width = "250">Email</td>
                <td>
-                  <input name = "i_dept" type = "text" id = "i_dept">
+                  <input name = "i_email" type = "text" id = "i_email">
                </td>
             </tr>
       
             <tr>
-               <td width = "250"> Salary</td>
-               <td> <input name="i_salary" type= "text" id = "i_salary"> </td>
+               <td width = "250"> Address</td>
+               <td> <input name="i_address" type= "text" id = "i_address"> </td>
             </tr>
             <tr>
                <td width = "250"></td>
                <td> </td>
             </tr>
          
+
+            <tr>
+               <td width = "250"> Phone Number</td>
+               <td> <input name="i_PhoneNumber" type= "text" id = "i_phoneNumber"> </td>
+            </tr>
+            <tr>
+               <td width = "250"></td>
+               <td> </td>
+            </tr>
+
+
             <tr>
                <td width = "250"> </td>
                <td>
