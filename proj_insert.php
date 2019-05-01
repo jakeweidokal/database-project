@@ -124,6 +124,10 @@
                <td>
                   <input name = "add" type = "submit" id = "add"  value = "insert" class="btn btn-primary">
                </td>
+
+               <td>
+                  <input name = "show" type = "submit" id = "show"  value = "show" class="btn btn-primary">
+               </td>
             </tr>
 			
          </table>
