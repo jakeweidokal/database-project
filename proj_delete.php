@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html> 
+<html>
+
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <title>Delete Customer</title>
 </head>
-<body >
 
-   <div class="bg-light" style="min-height:900px;">
-
+   <body>
+   <div class="bg-light" style="min-height:900px;" align="center">
+            
       <!-- NAV BAR (on all pages) -->
       <nav class="navbar navbar-dark bg-dark">
          <a class="navbar-brand" href="./index.html">Retail Database</a>
@@ -21,75 +23,86 @@
          </div>
       </nav>
       <!----------->
-
-      <div class="container">
-         <!-- Change query title for each page -->
+     
+      <br><br>
+          <!-- Change query title for each page -->
          <h1>Delete Customer</h1>
          <br><br><br>
 
-         <!-- FORM FOR QUERY (Edit inputs/labels as necessary for each page) -->
-         <div class="row text-center">
-            <div class="text-center" style="margin:auto;">
-               <form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>">
-                  <label for="i_ID">ID </label>
-                  <input name = "i_ID" type = "text" id = "i_ID">
-                  <input name="delete" type="submit" id="delete"  value="delete" class="btn btn-danger">
-               </form>
-            </div>
-         </div>
-         <!------------------->
 
-         <br><br>
-         <div class="row">
+             <?php
+	  
+		require("proj_tableshow.php");
+		require("proj_dbconnect.php");
+	  
+         if(isset($_POST['remove'])) {
+            
 
-            <!-- TABLE BEFORE QUERY (may need to change tale name depending on page) -->
-            <div class="col-md-6">
-               <h3 class="text-center">Before Query</h3>
-               <?php
-                  // import files to show tables and connect to DB
-                  require("proj_tableshow.php");
-                  require("proj_dbconnect.php");
-
-                  show_customer($conn); 
-               ?>
-            </div>
-            <!---------------------->
-
-            <!-- TABLE AFTER QUERY (change the query for each page) -->
-            <div class="col-md-6">
-               <h3 class="text-center">After Query</h3>
-
-                  <?php
-                     if(isset($_POST['delete'])) {
-
-                        $i_ID = $_POST['i_ID'];
-               
-                        $sql = "DELETE FROM customer WHERE accountID = $i_ID";
-                        
-                        //mysqli_select_db($conn,'university');
-                        $retval = mysqli_query($conn, $sql);
-                     
-                        if(! $retval ) {
-                           die('Could not enter data: ' . mysqli_error($conn));
-                        }
-                     
-                        echo "Removed data successfully";
-                     
-                        show_customer($conn);
-                     
-                        mysqli_close($conn);
-                     } 	 
-                  ?>
-
-            </div>
-            <!-------------------->
-
-         </div>
-      </div>
-   </div>
+            $i_accountID = $_POST['i_accountID'];
+			
+			echo " <br> Customer table before deletion <br>";
+			show_customer($conn);
    
+            $sql = "DELETE FROM customer ".
+               "WHERE accountID = ".
+               "'$i_accountID'";
+            
+			//mysqli_select_db($conn,'university');
+            $retval = mysqli_query($conn, $sql);
+         
+            if(! $retval ) {
+               die('Could not remove data: ' . mysqli_error($conn));
+            }
+         
+            echo "Removed data successfully\n";
+			
+			echo " <br> Customer table after deletion <br>";
+			show_customer($conn);
+			
+            mysqli_close($conn);
+         } 
+
+
+		  else if(isset($_POST['show'])){
+			 
+			 show_customer($conn);
+		 }	 
+		 
+		 else {
+      ?>
+	  <br><br><br><br>
+     <p>Enter Customer information for insertion <br> </p>
+      <form method = "post" action = "<?php $_PHP_SELF ?>">
+         <table width = "600" border = "0" cellspacing = "1" cellpadding = "2">
+            <tr>
+               <td width = "250">ID</td>
+               <td>
+                  <input name = "i_accountID" type = "text" id = "i_accountID">
+               </td>
+            </tr>
+
+            <tr>
+               <td width = "250"> </td>
+               <td>
+                  <input name = "remove" type = "submit" id = "remove"  value = "delete" class="btn btn-primary">
+               </td>
+
+               <td>
+                  <input name = "show" type = "submit" id = "show"  value = "show" class="btn btn-primary">
+               </td>
+            </tr>
+			
+         </table>
+
+         <?php
+            }
+         ?>
+   <hr width="50">
+<a href="index.html" style="color:red;font-weight:bold;">Home</a>
+<hr width="50">
+   </div>
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+   </body>
 </html>

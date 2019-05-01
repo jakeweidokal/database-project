@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html> 
+<html>
+
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <title>Add Customer</title>
 </head>
-<body >
-<div style="height:900px; background-color: lightblue;" align="center">
-<br><br><br><br>
+
+   <body>
+   <div class="bg-light" style="min-height:900px;" align="center">
+            
+      <!-- NAV BAR (on all pages) -->
+      <nav class="navbar navbar-dark bg-dark">
+         <a class="navbar-brand" href="./index.html">Retail Database</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+               <a class="nav-item nav-link active" href="./index.html">Home<span class="sr-only">(current)</span></a>
+            </div>
+         </div>
+      </nav>
+      <!----------->
+     
+      <br><br>
+          <!-- Change query title for each page -->
+         <h1>Add Customer</h1>
+         <br><br><br>
 
 
 <?php
