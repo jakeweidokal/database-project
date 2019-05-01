@@ -8,8 +8,29 @@
 </head>
 
    <body>
-   <div style="height:900px; background-color: lightblue;" align="center">
-      <?php
+   <div class="bg-light" style="min-height:900px;" align="center">
+            
+      <!-- NAV BAR (on all pages) -->
+      <nav class="navbar navbar-dark bg-dark">
+         <a class="navbar-brand" href="./index.html">Retail Database</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+               <a class="nav-item nav-link active" href="./index.html">Home<span class="sr-only">(current)</span></a>
+            </div>
+         </div>
+      </nav>
+      <!----------->
+     
+      <br><br>
+          <!-- Change query title for each page -->
+         <h1>Add Customer</h1>
+         <br><br><br>
+
+
+             <?php
 	  
 		require("proj_tableshow.php");
 		require("proj_dbconnect.php");
@@ -101,7 +122,7 @@
             <tr>
                <td width = "250"> </td>
                <td>
-                  <input name = "add" type = "submit" id = "add"  value = "insert">
+                  <input name = "add" type = "submit" id = "add"  value = "insert" class="btn btn-primary">
                </td>
             </tr>
 			
