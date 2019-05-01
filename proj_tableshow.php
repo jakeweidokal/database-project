@@ -9,10 +9,10 @@
 
 	if ($result->num_rows > 0) {
 		
-		echo "<br><h3> Customer Table<h3> <br>";
+		echo "<br><h5> Customer Table</h5> <br>";
 		
-		echo '<table border>';
-		echo '<thead><tr>';
+		echo '<table class="table" border>';
+		echo '<thead class="thead-dark"><tr>';
 		echo '<th>'."accountID".'</th>'.'<th>'."Name".'</th>'.'<th>'."Email".'</th>'.'<th>'."Address".'</th>'.'<th>'."phoneNumber".'</th>';
 		echo '</tr></thead>';
 		echo '<tbody>';
@@ -50,10 +50,10 @@ function show_inventory($conn){
 
 	if ($result->num_rows > 0) {
 		
-		echo "<br><h3> Inventory Table<h3> <br>";
+		echo "<br><h5> Inventory Table<h5> <br>";
 		
-		echo '<table border>';
-		echo '<thead><tr>';
+		echo '<table class="table" border>';
+		echo '<thead class="thead-dark"><tr>';
 		echo '<th>'."itemNumber".'</th>'.'<th>'."Name".'</th>'.'<th>'."Price".'</th>'.'<th>'."QuantityInStock".'</th>';
 		echo '</tr></thead>';
 		echo '<tbody>';
@@ -88,10 +88,10 @@ function show_transactions($conn){
 
 	if ($result->num_rows > 0) {
 		
-		echo "<br><h3> Detailed Transactions<h3> <br>";
+		echo "<br><h5> Detailed Transactions<h5> <br>";
 		
-		echo '<table border>';
-		echo '<thead><tr>';
+		echo '<table class="table" class="table" border>';
+		echo '<thead class="thead-dark"><tr>';
 		echo '<th>'."Transaction ID".'</th>'.'<th>'."Timestamp".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Total Spent".'</th>'.'<th>'."Payment Method".'</th>'.'<th>'."employee ID".'</th>';
 		echo '</tr></thead>';
 		echo '<tbody>';
@@ -128,10 +128,10 @@ function show_join($conn){
 
 	if ($result->num_rows > 0) {
 		
-		echo "<br><h3> Detailed Transactions<h3> <br>";
+		echo "<br><h5> Detailed Transactions<h5> <br>";
 		
-		echo '<table border>';
-		echo '<thead><tr>';
+		echo '<table class="table" border>';
+		echo '<thead class="thead-dark"><tr>';
 		echo '<th>'."Transaction ID".'</th>'.'<th>'."Timestamp".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Total Spent".'</th>'.'<th>'."Payment Method".'</th>'.'<th>'."employee ID".'</th>'.'<th>'."Account ID".'</th>'.'<th>'."Name".'</th>'.'<th>'."Email".'</th>'.'<th>'."Address".'</th>'.'<th>'."Phone Number".'</th>';
 		echo '</tr></thead>';
 		echo '<tbody>';

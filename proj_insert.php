@@ -106,11 +106,10 @@
             </tr>
 			
          </table>
-   
-	  
-   <?php
-      }
-   ?>
+
+         <?php
+            }
+         ?>
    <hr width="50">
 <a href="index.html" style="color:red;font-weight:bold;">Home</a>
 <hr width="50">
